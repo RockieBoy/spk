@@ -14,45 +14,45 @@
                 </a>
             </li>
             
-            <li class="{{ request()->is('icon') ? 'active' : '' }}">
-                <a href="">
+            <li class="{{ request()->is('data_kriteria') ? 'active' : '' }}">
+                <a href="{{ url('data_kriteria') }}">
                     <i class="nc-icon nc-diamond"></i>
-                    <p>Icons</p>
+                    <p>Data Kriteria</p>
                 </a>
             </li>
 
-            <li class="{{ request()->is('maps') ? 'active' : '' }}">
-                <a href="">
-                    <i class="nc-icon nc-pin-3"></i>
-                    <p>Maps</p>
+            <li class="{{ request()->is('data_sub_kriteria') ? 'active' : '' }}">
+                <a href="{{ url('data_sub_kriteria') }}">
+                    <i class="nc-icon nc-bullet-list-67"></i>
+                    <p>Data Sub Kriteria</p>
                 </a>
             </li>
 
-            <li class="{{ request()->is('notif') ? 'active' : '' }}">
-                <a href="">
-                    <i class="nc-icon nc-bell-55"></i>
-                    <p>Notifications</p>
-                </a>
-            </li>
-
-            <li class="{{ request()->is('profile') ? 'active' : '' }}">
-                <a href="">
+            <li class="{{ request()->is('data_alternatif') ? 'active' : '' }}">
+                <a href="{{ url('data_alternatif') }}">
                     <i class="nc-icon nc-single-02"></i>
-                    <p>User Profile</p>
+                    <p>Data Alternatif</p>
                 </a>
             </li>
 
-            <li class="{{ request()->is('table') ? 'active' : '' }}">
-                <a href="">
+            <li class="{{ request()->is('data_penilaian') ? 'active' : '' }}">
+                <a href="{{ url('data_penilaian') }}">
+                    <i class="nc-icon nc-chart-bar-32"></i>
+                    <p>Data Penilaian</p>
+                </a>
+            </li>
+
+            <li class="{{ request()->is('data_hitung') ? 'active' : '' }}">
+                <a href="{{ url('data_hitung') }}">
                     <i class="nc-icon nc-tile-56"></i>
-                    <p>Table List</p>
+                    <p>Data Penghitungan</p>
                 </a>
             </li>
 
-            <li class="{{ request()->is('typografi') ? 'active' : '' }}">
-                <a href="">
-                    <i class="nc-icon nc-caps-small"></i>
-                    <p>Typography</p>
+            <li class="{{ request()->is('data_hasil') ? 'active' : '' }}">
+                <a href="{{ url('data_hasil') }}">
+                    <i class="nc-icon nc-paper"></i>
+                    <p>Data Hasil</p>
                 </a>
             </li>
         </ul>
