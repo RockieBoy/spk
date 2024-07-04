@@ -1,3 +1,4 @@
+<aside>
 <div class="sidebar" data-color="white" data-active-color="danger">
     <div class="logo">
         <a class="simple-text logo-normal text-center">
@@ -14,8 +15,8 @@
                 </a>
             </li>
             
-            <li class="{{ request()->is('data_kriteria') ? 'active' : '' }}">
-                <a href="{{ url('data_kriteria') }}">
+            <li class="{{ request()->is('kriterium') ? 'active' : '' }}">
+                <a href="{{ route('kriterium.index') }}">
                     <i class="nc-icon nc-diamond"></i>
                     <p>Data Kriteria</p>
                 </a>
@@ -58,3 +59,4 @@
         </ul>
     </div>
 </div>
+</aside>

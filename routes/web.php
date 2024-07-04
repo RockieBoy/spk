@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KriteriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('content.dashboard');
 });
-
-Route::get('data_kriteria', function () {
-    return view('content.data_kriteria');
-});
+Route::resource('kriterium', App\http\Controllers\KriteriaController::class);
 
 Route::get('data_sub_kriteria', function () {
     return view('content.data_sub_kriteria');
