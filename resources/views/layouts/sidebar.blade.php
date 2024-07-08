@@ -22,15 +22,15 @@
                 </a>
             </li>
 
-            <li class="{{ request()->is('data_sub_kriteria') ? 'active' : '' }}">
-                <a href="{{ url('data_sub_kriteria') }}">
+            <li class="{{ request()->is('sub_kriteria') ? 'active' : '' }}">
+                <a href="">
                     <i class="nc-icon nc-bullet-list-67"></i>
                     <p>Data Sub Kriteria</p>
                 </a>
             </li>
 
-            <li class="{{ request()->is('data_alternatif') ? 'active' : '' }}">
-                <a href="{{ url('data_alternatif') }}">
+            <li class="{{ request()->is('alternatif') ? 'active' : '' }}">
+                <a href="{{ route('alternatif.index') }}">
                     <i class="nc-icon nc-single-02"></i>
                     <p>Data Alternatif</p>
                 </a>
