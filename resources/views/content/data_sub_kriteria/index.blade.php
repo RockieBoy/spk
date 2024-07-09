@@ -28,13 +28,20 @@ Coded by www.creative-tim.com
             </div>
             @endif
             <div class="container">
-            <div class="row mb-4">
+            <a class="btn btn-success mb-4" href="{{ route('kriterium.index') }}"> <- Kembali </a>
+            
+            <div class="row mb-5">
                   <form class="d-flex w-100 " action="" method="GET">
                   @csrf
                         <input type="text" class="form-control mr-5" name="" placeholder="Silahkan cari data yang diperlukan disini" aria-label="Cari">
                         <input type="submit" value="Cari Data" id="" class="btn btn-outline-success">
                   </form>
             </div>
+            
+            <center>
+            <h2>Sub Kriteria untuk Kriteria {{ $kriterium->kd_kriteria }} : {{ $kriterium->nm_kriteria }}</h2>
+            </center>
+
             </div>
 
             <a class="btn btn-success mb-4" href="{{ route('kriterium.subkriterias.create', $kriterium) }}">+ Tambah Data Sub Kriteria</a>
