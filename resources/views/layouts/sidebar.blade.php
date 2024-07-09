@@ -22,13 +22,6 @@
                 </a>
             </li>
 
-            <li class="{{ request()->is('sub_kriteria') ? 'active' : '' }}">
-                <a href="">
-                    <i class="nc-icon nc-bullet-list-67"></i>
-                    <p>Data Sub Kriteria</p>
-                </a>
-            </li>
-
             <li class="{{ request()->is('alternatif') ? 'active' : '' }}">
                 <a href="{{ route('alternatif.index') }}">
                     <i class="nc-icon nc-single-02"></i>
@@ -50,8 +43,8 @@
                 </a>
             </li>
 
-            <li class="{{ request()->is('data_hasil') ? 'active' : '' }}">
-                <a href="{{ url('data_hasil') }}">
+            <li class="{{ request()->is('hasil') ? 'active' : '' }}">
+                <a href="hasil.index">
                     <i class="nc-icon nc-paper"></i>
                     <p>Data Hasil</p>
                 </a>

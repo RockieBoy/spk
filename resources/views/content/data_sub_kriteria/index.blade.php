@@ -37,35 +37,30 @@ Coded by www.creative-tim.com
             </div>
             </div>
 
-            <a class="btn btn-success mb-4" href="{{ route('kriterium.create') }}">+ Tambah Data Kriteria</a>
+            <a class="btn btn-success mb-4" href="{{ route('kriterium.subkriterias.create', $kriterium) }}">+ Tambah Data Sub Kriteria</a>
 
             <div class="table-responsive">
                   <table class="table table-center card-table table-striped" style="text-align: center;">
                         <thead>
                               <tr>
-                                    <th>Nomor</th>
-                                    <th>Kode Kriteria</th>
-                                    <th>Nama Kriteria</th>
-                                    <th>Bobot</th>
-                                    <th>Jenis</th>
-                                    <th>Aksi</th>
+                              <th>No</th>
+                              <th>Nama Sub Kriteria</th>
+                              <th>Nilai</th>
+                              <th>Aksi</th>
                               </tr>
                         </thead>
                         <tbody>
                         <tr>
-                              @foreach ($kriterium as $data)
+                              @foreach ($subkriteria as $sub)
                               <td>{{$loop->iteration}}</td>
-                              <td>{{$data->kd_kriteria}}</td>
-                              <td>{{$data->nm_kriteria}}</td>
-                              <td>{{$data->bobot}} %</td>
-                              <td>{{$data->jenis}}</td>
+                              <td>{{ $sub->nm_subkriteria }}</td>
+                              <td>{{ $sub->nilai }}</td>
                               <td>
-                                    <form action="{{route('kriterium.destroy', $data->id)}}" method="post">
+                                    <form action="{{route('kriterium.subkriterias.destroy', [$kriterium, $sub])}}" method="post">
                                           @csrf
                                           @method('DELETE')
-                                          <a href="{{route('kriterium.edit', $data->id)}}" class="btn btn-primary">Edit</a>
+                                          <a href="{{route('kriterium.subkriterias.edit', [$kriterium, $sub])}}" class="btn btn-primary">Edit</a>
                                           <button type="submit" class="btn btn-danger">Hapus</button>
-                                          <a href="{{route('kriterium.subkriterias.index', $data->id)}}" class="btn btn-warning">Sub Kriteria</a>
                                           
                                     </form>
                               </td> 

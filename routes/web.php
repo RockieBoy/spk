@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KriteriaController;
-use App\Http\Controllers\SubKriteriaController;
+use App\Http\Controllers\SubkriteriaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,8 @@ Route::get('/', function () {
 });
 Route::resource('kriterium', App\http\Controllers\KriteriaController::class);
 
+Route::resource('kriterium.subkriterias', SubkriteriaController::class);
+
 Route::resource('alternatif', App\http\Controllers\AlternatifController::class);
 
 Route::get('data_penilaian', function () {
@@ -28,8 +31,4 @@ Route::get('data_penilaian', function () {
 
 Route::get('data_hitung', function () {
     return view('content.data_hitung');
-});
-
-Route::get('data_hasil', function () {
-    return view('content.data_hasil');
 });
