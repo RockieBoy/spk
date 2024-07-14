@@ -18,17 +18,21 @@ Coded by www.creative-tim.com
             <div class="container-fluid">
                   <form class="m-5 p-5" action="{{route('kriterium.subkriterias.store', $kriterium)}}" method="POST" enctype="multipart/form-data">
                   @csrf
-
+                        
+                        <div class="form-group">
                         <div class="mb-3">
                         <label class="form-label">Nama Sub Kriteria :</label>
                               <input type="text" name="nm_subkriteria" class="form-control" placeholder="Masukan Nama Sub Kriteria">
                         </div>
+                        </div>
 
+                        <div class="form-group">
                         <div class="mb-3">
                         <label class="form-label">Nilai :</label>
                               <input type="text" name="nilai" class="form-control" placeholder="Masukan Nilai">
                         </div>
-
+                        </div>
+                        
                         <div class="mb-3">
                         <center>
                               <input type="submit" value="Simpan" class="btn btn-success">

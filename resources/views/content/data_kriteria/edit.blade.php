@@ -19,21 +19,29 @@ Coded by www.creative-tim.com
                   <form class="m-5 p-5" action="{{route('kriterium.update',$kriterium->id)}}" method="POST" enctype="multipart/form-data">
                   @csrf
                   @method('PUT')
+
+                        <div class="form-group">
                         <div class="mb-3">
                         <label class="form-label">Kode Kriteria :</label>
                               <input type="text" name="kd_kriteria" class="form-control" value="{{$kriterium->kd_kriteria}}" placeholder="Masukan Kode Kriteria">
+                        </div>
                         </div>      
 
+                        <div class="form-group">
                         <div class="mb-3">
                         <label class="form-label">Nama Kriteria :</label>
                               <input type="text" name="nm_kriteria" class="form-control" value="{{$kriterium->nm_kriteria}}" placeholder="Masukan Nama Kriteria">
                         </div>
+                        </div>
 
+                        <div class="form-group">
                         <div class="mb-3">
                         <label class="form-label">Bobot :</label>
                               <input type="text" name="bobot" class="form-control" value="{{$kriterium->bobot}}" placeholder="Masukan Nama Kriteria">
                         </div>
+                        </div>
 
+                        <div class="form-group">
                         <div class="mb-3">
                         <label class="form-label">Jenis :</label>
                               <select name="jenis" class="form-control">
@@ -41,7 +49,7 @@ Coded by www.creative-tim.com
                                     <option value="Benefit" {{ $kriterium->jenis == 'Benefit' ? 'selected' : '' }}>Benefit</option>
                               </select>
                         </div>
-
+                        </div>
 
                         <div class="mb-3">
                         <center>

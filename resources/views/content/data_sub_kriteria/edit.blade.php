@@ -19,15 +19,19 @@ Coded by www.creative-tim.com
                   <form class="m-5 p-5" action="{{route('kriterium.subkriterias.update', [$kriterium, $subkriteria])}}" method="POST" enctype="multipart/form-data">
                   @csrf
                   @method('PUT')
-
+                        
+                        <div class="form-group">
                         <div class="mb-3">
                         <label class="form-label">Nama Sub Kriteria :</label>
                               <input type="text" name="nm_subkriteria" class="form-control" value="{{ old('nm_subkriteria', $subkriteria->nm_subkriteria) }}" placeholder="Masukan Nama Sub Kriteria">
                         </div>
+                        </div>
 
+                        <div class="form-group">
                         <div class="mb-3">
                         <label class="form-label">Nilai :</label>
                               <input type="text" name="nilai" class="form-control" value="{{ old('nilai', $subkriteria->nilai) }}" placeholder="Masukan Nilai">
+                        </div>
                         </div>
 
                         <div class="mb-3">
