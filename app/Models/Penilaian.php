@@ -5,16 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SubKriteria extends Model
+class Penilaian extends Model
 {
     use HasFactory;
-    public $table = "sub_kriteria";
+    public $table = "penilaian";
 
     protected $primarykey = 'id';
 
     protected $fillable = [
+        'alternatif_id',
         'kriteria_id',
-        'nm_subkriteria',
+        'subkriteria_id',
         'nilai',
     ];
 
@@ -23,9 +24,14 @@ class SubKriteria extends Model
         return $this->belongsTo(Kriteria::class);
     }
 
-    public function penilaian()
+    public function subkriteria()
     {
-        return $this->hasMany(Penilaian::class);
+        return $this->belongsTo(Subkriteria::class);
+    }
+
+    public function alternatif()
+    {
+        return $this->belongsTo(Alternatif::class);
     }
 
 }

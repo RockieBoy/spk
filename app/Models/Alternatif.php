@@ -16,5 +16,8 @@ class Alternatif extends Model
         'kd_alternatif',
         'nm_alternatif',
     ];
-
+    public function penilaian()
+    {
+        return $this->hasMany(Penilaian::class);
+    }
 }

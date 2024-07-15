@@ -28,47 +28,52 @@ Coded by www.creative-tim.com
             </div>
             @endif
             <div class="container">
-            <div class="row mb-4">
-                  <form class="d-flex w-100 " action="" method="GET">
-                  @csrf
-                        <input type="text" class="form-control mr-5" name="" placeholder="Silahkan cari data yang diperlukan disini" aria-label="Cari">
-                        <input type="submit" value="Cari Data" id="" class="btn btn-outline-success">
-                  </form>
-            </div>
+
+            <a class="btn btn-success mb-4" href="{{ route('alternatif.index') }}"> <- Kembali </a>
+            
+            <div class="text-center mb-5">
+            
+            <h2>Penilaian untuk Alternatif {{$alternatif->kd_alternatif}} : {{$alternatif->nm_alternatif}}</h2>
+            
             </div>
 
-            <a class="btn btn-success mb-4" href="{{ route('alternatif.create') }}">+ Tambah Data Kriteria</a>
+            </div>
+
+            @if($hasPenilaian)
+                  <form action="">
+                  <a class="btn btn-primary mb-4" href="">Edit Penilaian</a>
+                  <button class="btn btn-danger mb-4" href="">Hapus Penilaian</button>
+                  </form>
 
             <div class="table-responsive">
                   <table class="table table-center card-table table-striped" style="text-align: center;">
                         <thead>
                               <tr>
-                                    <th>Nomor</th>
-                                    <th>Kode Alternatif</th>
-                                    <th>Nama Alternatif</th>
-                                    <th>Aksi</th>
+                              <th>No</th>
+                              <th>Kriteria</th>
+                              <th>Nilai</th>
                               </tr>
                         </thead>
                         <tbody>
                         <tr>
-                              @foreach ($alternatif as $data)
+                              @foreach($penilaian as $data)
                               <td>{{$loop->iteration}}</td>
-                              <td>{{$data->kd_alternatif}}</td>
-                              <td>{{$data->nm_alternatif}}</td>
-                              <td>
-                                    <form action="{{route('alternatif.destroy', $data->id)}}" method="post">
-                                          @csrf
-                                          @method('DELETE')
-                                          <a href="{{route('alternatif.edit', $data->id)}}" class="btn btn-primary">Edit</a>
-                                          <button type="submit" class="btn btn-danger">Hapus</button>
-                                          <a href="{{route('alternatif.penilaians.index', $data->id)}}" class="btn btn-warning">Penilaian</a>
-                                    </form>
-                              </td> 
+                              <td>{{$data->kriteria->kd_kriteria }}</td>
+                              <td>{{$data->nilai}}</td>
                         </tr>
-                              @endforeach  
+                              @endforeach
+
                         </tbody>
+                        
                   </table>
             </div>
+            @else
+                  <center>
+                  <h1>Tidak ada Data Penilaian</h1>
+                  <h1>Silahkan Isi Dahulu</h1>
+                  <a class="btn btn-success mb-4 " href="{{route('alternatif.penilaians.create', $alternatif)}}">+ Tambah Penilaian</a>
+                  </center>
+            @endif
       </div>
 </div>
 @endsection      

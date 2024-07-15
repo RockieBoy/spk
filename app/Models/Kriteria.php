@@ -24,4 +24,8 @@ class Kriteria extends Model
         return $this->hasMany(Subkriteria::class);
     }
 
+    public function penilaian()
+    {
+        return $this->hasMany(Penilaian::class);
+    }
 }

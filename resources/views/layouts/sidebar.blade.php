@@ -29,13 +29,6 @@
                 </a>
             </li>
 
-            <li class="{{ request()->is('data_penilaian') ? 'active' : '' }}">
-                <a href="{{ url('data_penilaian') }}">
-                    <i class="nc-icon nc-chart-bar-32"></i>
-                    <p>Data Penilaian</p>
-                </a>
-            </li>
-
             <li class="{{ request()->is('data_hitung') ? 'active' : '' }}">
                 <a href="{{ url('data_hitung') }}">
                     <i class="nc-icon nc-tile-56"></i>
