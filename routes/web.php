@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PenilaianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +23,17 @@ Route::resource('kriterium.subkriterias', App\Http\Controllers\SubkriteriaContro
 
 Route::resource('alternatif', App\http\Controllers\AlternatifController::class);
 
-Route::resource('alternatif.penilaians', App\Http\Controllers\PenilaianController::class);
+
+
+Route::prefix('alternatif/{alternatif}')->group(function () {
+    Route::get('penilaians', [PenilaianController::class, 'index'])->name('alternatif.penilaians.index');
+    Route::get('penilaians/create', [PenilaianController::class, 'create'])->name('alternatif.penilaians.create');
+    Route::post('penilaians', [PenilaianController::class, 'store'])->name('alternatif.penilaians.store');
+    Route::get('penilaians/edit', [PenilaianController::class, 'edit'])->name('alternatif.penilaians.edit');
+    Route::put('penilaians', [PenilaianController::class, 'update'])->name('alternatif.penilaians.update');
+    Route::delete('penilaians', [PenilaianController::class, 'destroy'])->name('alternatif.penilaians.destroy');
+});
+
 
 
 Route::get('data_hitung', function () {
