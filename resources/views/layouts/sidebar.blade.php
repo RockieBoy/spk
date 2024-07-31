@@ -29,8 +29,8 @@
                 </a>
             </li>
 
-            <li class="{{ request()->is('data_hitung') ? 'active' : '' }}">
-                <a href="{{ url('data_hitung') }}">
+            <li class="{{ request()->is('perhitungan') ? 'active' : '' }}">
+                <a href="{{ route('perhitungan.index') }}">
                     <i class="nc-icon nc-tile-56"></i>
                     <p>Data Penghitungan</p>
                 </a>

@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,14 +16,10 @@ Route::get('/', function () {
     return view('content.dashboard');
 });
 Route::resource('kriterium', App\http\Controllers\KriteriaController::class);
-
 Route::resource('kriterium.subkriterias', App\Http\Controllers\SubkriteriaController::class);
-
 Route::resource('alternatif', App\http\Controllers\AlternatifController::class);
-
 Route::resource('alternatif.penilaians', App\Http\Controllers\PenilaianController::class);
-
-
-Route::get('data_hitung', function () {
-    return view('content.data_hitung');
-});
+Route::resource('perhitungan', App\Http\Controllers\PerhitunganController::class);
+// Route::get('data_hitung', function () {
+//     return view('content.data_hitung');
+// });
