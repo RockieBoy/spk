@@ -18,6 +18,9 @@ use App\Http\Controllers\PenilaianController;
 Route::get('/', [App\http\Controllers\UserController::class,'index'] );
 Route::post('/', [App\http\Controllers\UserController::class,'login'] );
 
+// Route::get('/', function () {
+//     return view('content.dashboard');
+// });
 
 Route::resource('kriterium', App\http\Controllers\KriteriaController::class);
 

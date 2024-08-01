@@ -78,6 +78,7 @@
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
+                <th>G</th>
                 @foreach ($kriterias as $kriteria)
                     <th>{{ $kriteria->nm_kriteria }}</th>
                 @endforeach
@@ -85,6 +86,7 @@
         </thead>
         <tbody>
             <tr>
+                <td>G</td>
                 @foreach ($kriterias as $kriteria)
                     <td>{{ number_format($matrixG[$kriteria->id], 3) }}</td>
                 @endforeach
@@ -116,7 +118,7 @@
     </table>
 
     <!-- Total Nilai Alternatif -->
-    <h4>Total Nilai Alternatif</h4>
+    <h4>Total Nilai Alternatif (S)</h4>
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>

@@ -47,18 +47,18 @@ class PerhitunganController extends Controller
         $weightedNormalizedMatrix = [];
         foreach ($alternatifs as $alternatif) {
             foreach ($kriterias as $kriteria) {
-                $weightedNormalizedMatrix[$alternatif->id][$kriteria->id] = $normalizedMatrix[$alternatif->id][$kriteria->id] * $kriteria->bobot;
+                $weightedNormalizedMatrix[$alternatif->id][$kriteria->id] = ($matrixKeputusan[$alternatif->id][$kriteria->id] * $normalizedMatrix[$alternatif->id][$kriteria->id]) + $matrixKeputusan[$alternatif->id][$kriteria->id];
             }
         }
 
         // Menentukan Matriks Area Perkiraan Perbatasan (G)
         $matrixG = [];
         foreach ($kriterias as $kriteria) {
-            $sum = 0;
+            $product = 1.0;
             foreach ($alternatifs as $alternatif) {
-                $sum += $weightedNormalizedMatrix[$alternatif->id][$kriteria->id];
+                $product *= $weightedNormalizedMatrix[$alternatif->id][$kriteria->id];
             }
-            $matrixG[$kriteria->id] = $sum / count($alternatifs);
+            $matrixG[$kriteria->id] = pow($product, 1 / count($alternatifs));
         }
 
         // Menghitung Matriks Jarak Alternatif dari Daerah Perkiraan Perbatasan (Q)
@@ -99,5 +99,6 @@ class PerhitunganController extends Controller
                 'ranking' => $ranking
         ]);
     }
+    
 }
 ?>
