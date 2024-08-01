@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PenilaianController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,14 +15,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('content.dashboard');
-});
+Route::get('/', [App\http\Controllers\UserController::class,'index'] );
+Route::post('/', [App\http\Controllers\UserController::class,'login'] );
+
+
 Route::resource('kriterium', App\http\Controllers\KriteriaController::class);
+
 Route::resource('kriterium.subkriterias', App\Http\Controllers\SubkriteriaController::class);
+
 Route::resource('alternatif', App\http\Controllers\AlternatifController::class);
-Route::resource('alternatif.penilaians', App\Http\Controllers\PenilaianController::class);
-Route::resource('perhitungan', App\Http\Controllers\PerhitunganController::class);
-// Route::get('data_hitung', function () {
-//     return view('content.data_hitung');
-// });
+
+Route::resource('perhitungan', App\http\Controllers\PerhitunganController::class);
+
+
+Route::prefix('alternatif/{alternatif}')->group(function () {
+    Route::get('penilaians', [PenilaianController::class, 'index'])->name('alternatif.penilaians.index');
+    Route::get('penilaians/create', [PenilaianController::class, 'create'])->name('alternatif.penilaians.create');
+    Route::post('penilaians', [PenilaianController::class, 'store'])->name('alternatif.penilaians.store');
+    Route::get('penilaians/edit', [PenilaianController::class, 'edit'])->name('alternatif.penilaians.edit');
+    Route::put('penilaians', [PenilaianController::class, 'update'])->name('alternatif.penilaians.update');
+    Route::delete('penilaians', [PenilaianController::class, 'destroy'])->name('alternatif.penilaians.destroy');
+});
+
+
+
+Route::get('data_hitung', function () {
+    return view('content.data_hitung');
+});
+
