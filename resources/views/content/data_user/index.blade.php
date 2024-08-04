@@ -27,32 +27,34 @@ Coded by www.creative-tim.com
                   </ul>
             </div>
             @endif
-
-            <a class="btn btn-success mb-4" href="{{ route('alternatif.create') }}">+ Tambah Data Kriteria</a>
+            
+            <a class="btn btn-success mb-4" href="{{route('adminusers.create')}}">+ Tambah Data User</a>
 
             <div class="table-responsive">
                   <table class="table table-center card-table table-striped" style="text-align: center;">
                         <thead>
                               <tr>
                                     <th>Nomor</th>
-                                    <th>Kode Alternatif</th>
-                                    <th>Nama Alternatif</th>
+                                    <th>Username</th>
+                                    <th>Role</th>
+                                    <th>Email</th>
                                     <th>Aksi</th>
                               </tr>
                         </thead>
                         <tbody>
                         <tr>
-                              @foreach ($alternatif as $data)
+                              @foreach ($adminusers as $data)
                               <td>{{$loop->iteration}}</td>
-                              <td>{{$data->kd_alternatif}}</td>
-                              <td>{{$data->nm_alternatif}}</td>
+                              <td>{{$data->name}}</td>
+                              <td>{{$data->role}}</td>
+                              <td>{{$data->email}}</td>
                               <td>
-                                    <form action="{{route('alternatif.destroy', $data->id)}}" method="post">
+                                    <form action="{{route('adminusers.destroy',$data->id)}}" method="post">
                                           @csrf
                                           @method('DELETE')
-                                          <a href="{{route('alternatif.edit', $data->id)}}" class="btn btn-primary">Edit</a>
+                                          <a href="{{route('adminusers.edit',$data->id)}}" class="btn btn-primary">Edit</a>
                                           <button type="submit" class="btn btn-danger">Hapus</button>
-                                          <a href="{{route('alternatif.penilaians.index', $data->id)}}" class="btn btn-warning">Penilaian</a>
+                                          
                                     </form>
                               </td> 
                         </tr>

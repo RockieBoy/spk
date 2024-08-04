@@ -8,7 +8,7 @@
                     <span class="navbar-toggler-bar bar3"></span>
                 </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Sistem Penunjang Keputusan</a>
+            
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -22,14 +22,17 @@
                   <i class="nc-icon nc-settings-gear-65"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="{{ route('user.account') }}">
                     <i class="nc-icon nc-circle-10"></i>
                     <p class="mx-3">Account</p>
                   </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="nc-icon nc-button-power"></i>
-                    <p class="mx-3">Logout</p>
-                  </a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <i class="nc-icon nc-button-power"></i>
+                            <p class="mx-3">Logout</p>
+                        </a>
                 </div>
               </li>
             </ul>

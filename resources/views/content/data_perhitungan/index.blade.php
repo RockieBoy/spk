@@ -1,17 +1,18 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container mt-5">
+<div class="content">
+<div class="container-fluid">
     <h2 class="mb-4">Hasil Perhitungan MABAC</h2>
 
     <!-- Matriks Keputusan -->
     <h4>Matriks Keputusan</h4>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped text-center">
         <thead class="thead-dark">
             <tr>
                 <th>Alternatif</th>
                 @foreach ($kriterias as $kriteria)
-                    <th>{{ $kriteria->nm_kriteria }}</th>
+                    <th>{{ $kriteria->kd_kriteria }}</th>
                 @endforeach
             </tr>
         </thead>
@@ -29,12 +30,12 @@
 
     <!-- Matriks Ternormalisasi -->
     <h4>Matriks Ternormalisasi</h4>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped text-center">
         <thead class="thead-dark">
             <tr>
                 <th>Alternatif</th>
                 @foreach ($kriterias as $kriteria)
-                    <th>{{ $kriteria->nm_kriteria }}</th>
+                    <th>{{ $kriteria->kd_kriteria }}</th>
                 @endforeach
             </tr>
         </thead>
@@ -52,12 +53,12 @@
 
     <!-- Matriks Ternormalisasi Terbobot -->
     <h4>Matriks Ternormalisasi Terbobot</h4>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped text-center">
         <thead class="thead-dark">
             <tr>
                 <th>Alternatif</th>
                 @foreach ($kriterias as $kriteria)
-                    <th>{{ $kriteria->nm_kriteria }}</th>
+                    <th>{{ $kriteria->kd_kriteria }}</th>
                 @endforeach
             </tr>
         </thead>
@@ -75,18 +76,18 @@
 
     <!-- Matriks Area Perkiraan Perbatasan (G) -->
     <h4>Matriks Area Perkiraan Perbatasan (G)</h4>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped text-center">
         <thead class="thead-dark">
             <tr>
-                <th>G</th>
+                
                 @foreach ($kriterias as $kriteria)
-                    <th>{{ $kriteria->nm_kriteria }}</th>
+                    <th>{{ $kriteria->kd_kriteria }}</th>
                 @endforeach
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>G</td>
+                
                 @foreach ($kriterias as $kriteria)
                     <td>{{ number_format($matrixG[$kriteria->id], 3) }}</td>
                 @endforeach
@@ -96,12 +97,12 @@
 
     <!-- Matriks Jarak Alternatif dari Daerah Perkiraan Perbatasan (Q) -->
     <h4>Matriks Jarak Alternatif dari Daerah Perkiraan Perbatasan (Q)</h4>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped text-center">
         <thead class="thead-dark">
             <tr>
                 <th>Alternatif</th>
                 @foreach ($kriterias as $kriteria)
-                    <th>{{ $kriteria->nm_kriteria }}</th>
+                    <th>{{ $kriteria->kd_kriteria }}</th>
                 @endforeach
             </tr>
         </thead>
@@ -119,7 +120,7 @@
 
     <!-- Total Nilai Alternatif -->
     <h4>Total Nilai Alternatif (S)</h4>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped text-center">
         <thead class="thead-dark">
             <tr>
                 <th>Alternatif</th>
@@ -138,7 +139,7 @@
 
     <!-- Ranking -->
     <h4>Ranking</h4>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped text-center">
         <thead class="thead-dark">
             <tr>
                 <th>Rank</th>
@@ -156,5 +157,7 @@
             @endforeach
         </tbody>
     </table>
+</div>
+</div>
 </div>
 @endsection

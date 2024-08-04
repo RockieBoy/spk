@@ -27,17 +27,16 @@ class PenilaianController extends Controller
 
     public function store(Request $request, Alternatif $alternatif)
     {
-        \Log::info('Request data:', $request->all());
+
 
         $request->validate([
             'kriteria' => 'required|array',
             'kriteria.*' => 'required|exists:sub_kriteria,id',
         ]);
 
-        \Log::info('Kriteria data:', $request->kriteria);
 
         foreach ($request->kriteria as $kriteriaId => $subkriteriaId) {
-            \Log::info('Processing Kriteria:', ['kriteriaId' => $kriteriaId, 'subkriteriaId' => $subkriteriaId]);
+            
 
             $nilaiSubkriteria = Subkriteria::where('id', $subkriteriaId)->value('nilai');
 

@@ -27,16 +27,7 @@ Coded by www.creative-tim.com
                   </ul>
             </div>
             @endif
-            <div class="container">
-            <div class="row mb-4">
-                  <form class="d-flex w-100 " action="" method="GET">
-                  @csrf
-                        <input type="text" class="form-control mr-5" name="" placeholder="Silahkan cari data yang diperlukan disini" aria-label="Cari">
-                        <input type="submit" value="Cari Data" id="" class="btn btn-outline-success">
-                  </form>
-            </div>
-            </div>
-
+            
             <a class="btn btn-success mb-4" href="{{ route('kriterium.create') }}">+ Tambah Data Kriteria</a>
 
             <div class="table-responsive">
@@ -57,7 +48,7 @@ Coded by www.creative-tim.com
                               <td>{{$loop->iteration}}</td>
                               <td>{{$data->kd_kriteria}}</td>
                               <td>{{$data->nm_kriteria}}</td>
-                              <td>{{$data->bobot}} %</td>
+                              <td>{{$data->bobot}}</td>
                               <td>{{$data->jenis}}</td>
                               <td>
                                     <form action="{{route('kriterium.destroy', $data->id)}}" method="post">
