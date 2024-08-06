@@ -53,7 +53,7 @@ Route::middleware(['auth'])->group(function() {
     });
 
     // Route untuk dosen
-    Route::middleware('userAkses:dosen')->group(function() {
+    Route::middleware('userAkses:kaprodi')->group(function() {
         Route::prefix('kriterium')->group(function () {
             Route::get('/', [KriteriaController::class, 'index'])->name('kriterium.index');
             Route::get('/create', [KriteriaController::class, 'create'])->name('kriterium.create');

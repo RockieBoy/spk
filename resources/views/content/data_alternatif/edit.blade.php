@@ -19,14 +19,18 @@ Coded by www.creative-tim.com
                   <form class="m-5 p-5" action="{{route('alternatif.update',$alternatif->id)}}" method="POST" enctype="multipart/form-data">
                   @csrf
                   @method('PUT')
+                        <div class="form-group">
                         <div class="mb-3">
                         <label class="form-label">Kode alternatif :</label>
                               <input type="text" name="kd_alternatif" class="form-control" value="{{$alternatif->kd_alternatif}}" placeholder="Masukan Kode Alternatif">
+                        </div>
                         </div>      
 
+                        <div class="form-group">
                         <div class="mb-3">
                         <label class="form-label">Nama Alternatif :</label>
                               <input type="text" name="nm_alternatif" class="form-control" value="{{$alternatif->nm_alternatif}}" placeholder="Masukan Nama Alternatif">
+                        </div>
                         </div>
 
                         <div class="mb-3">

@@ -18,16 +18,19 @@ Coded by www.creative-tim.com
             <div class="container-fluid">
                   <form class="m-5 p-5" action="{{route('alternatif.store')}}" method="POST" enctype="multipart/form-data">
                   @csrf
-
+                        <div class="form-group">
                         <div class="mb-3">
-                        <label class="form-label">Kode Kriteria :</label>
+                        <label class="form-label">Kode Alternatif :</label>
                               <input type="text" name="kd_alternatif" class="form-control " placeholder="Masukan Kode Alternatif">
+                        </div> 
                         </div>      
 
+                        <div class="form-group">
                         <div class="mb-3">
-                        <label class="form-label">Nama Kriteria :</label>
+                        <label class="form-label">Nama Alternatif :</label>
                               <input type="text" name="nm_alternatif" class="form-control " placeholder="Masukan Nama Alternatif">
                         </div>
+                        </div> 
 
                         <div class="mb-3">
                         <center>

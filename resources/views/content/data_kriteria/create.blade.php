@@ -45,7 +45,7 @@ Coded by www.creative-tim.com
                         <div class="mb-3">
                         <label class="form-label">Jenis :</label>
                               <select name="jenis" class="form-control">
-                                    <option selected>Pilih Jenis Bahan</option>
+                                    <option selected>Pilih Jenis</option>
                                     <option value="Cost">Cost</option>
                                     <option value="Benefit">Benefit</option>
                               </select>

@@ -15,7 +15,7 @@
                 </a>
             </li>
             
-            @if (Auth::user()->role == 'dosen')
+            @if (Auth::user()->role == 'kaprodi')
                 <li class="{{ request()->is('kriterium') ? 'active' : '' }}">
                     <a href="{{ route('kriterium.index') }}">
                         <i class="nc-icon nc-diamond"></i>

@@ -23,9 +23,9 @@ class CicUsersSeeder extends Seeder
                 'password'=> bcrypt('12345')
             ],
             [
-                'name' => 'Dosen',
-                'email'=> 'dosen@gmail.com',
-                'role'=> 'dosen',
+                'name' => 'Kaprodi',
+                'email'=> 'kaprodi@gmail.com',
+                'role'=> 'kaprodi',
                 'password'=> bcrypt('12345')
             ],
             [
