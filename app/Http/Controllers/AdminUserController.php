@@ -45,9 +45,9 @@ class AdminUserController extends Controller
         return view('content.data_user.edit',compact('adminusers'));
     }
 
-    public function update(Request $request, User $user)
+    public function update(Request $request, User $adminusers)
 {
-    // Validasi data
+    
     $request->validate([
         'name' => 'required',
         'email' => 'required',
@@ -59,7 +59,7 @@ class AdminUserController extends Controller
         'role.required' => 'Role Wajib Diisi',
     ]);
 
-    // Update user
+    
     $data = [
         'name' => $request->name,
         'email' => $request->email,
@@ -70,9 +70,9 @@ class AdminUserController extends Controller
         $data['password'] = bcrypt($request->password);
     }
 
-    $user->update($data);
+    $adminusers->update($data);
 
-    return redirect()->route('user.account')->with('success', 'Akun berhasil diubah');
+    return redirect()->route('adminusers.index')->with('success', 'Akun berhasil diubah');
 }
 
 

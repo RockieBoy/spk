@@ -45,9 +45,9 @@
             </div>
             </div>
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <div class="text-white px-3 py-4 p-md-4 mx-md-4">
                     <h4 class="mb-4">Sistem Penunjang Keputusan</h4>
-                    <p class="small mb-0">Sistem Penunjang Keputusan menggunakan metode MABAC untuk menentukan perankingan mahasiswa terbaik Teknik Informatika Unersitas Catur Insan Cendekia</p>
+                    <p class="small mb-0">Sistem Penunjang Keputusan menggunakan metode MABAC untuk menentukan perankingan mahasiswa terbaik Teknik Informatika Universitas Catur Insan Cendekia</p>
                 </div>
             </div>
             </div>
