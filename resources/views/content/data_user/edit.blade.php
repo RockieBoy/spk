@@ -46,7 +46,7 @@ Coded by www.creative-tim.com
                         <label class="form-label">role :</label>
                               <select name="role" class="form-control">
                                     <option value="superadmin" {{ $adminusers->role == 'superadmin' ? 'selected' : '' }}>SuperAdmin</option>
-                                    <option value="dosen" {{ $adminusers->role == 'dosen' ? 'selected' : '' }}>Dosen</option>
+                                    <option value="kaprodi" {{ $adminusers->role == 'kaprodi' ? 'selected' : '' }}>KaProdi</option>
                                     <option value="mahasiswa" {{ $adminusers->role == 'mahasiswa' ? 'selected' : '' }}>mahasiswa</option>
                               </select>
                         </div>

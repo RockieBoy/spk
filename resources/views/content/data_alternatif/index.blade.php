@@ -36,6 +36,7 @@ Coded by www.creative-tim.com
                               <tr>
                                     <th>Nomor</th>
                                     <th>Kode Alternatif</th>
+                                    <th>NIM</th>
                                     <th>Nama Alternatif</th>
                                     <th>Aksi</th>
                               </tr>
@@ -45,6 +46,7 @@ Coded by www.creative-tim.com
                               @foreach ($alternatif as $data)
                               <td>{{$loop->iteration}}</td>
                               <td>{{$data->kd_alternatif}}</td>
+                              <td>{{$data->nim}}</td>
                               <td>{{$data->nm_alternatif}}</td>
                               <td>
                                     <form action="{{route('alternatif.destroy', $data->id)}}" method="post">

@@ -20,8 +20,11 @@ Coded by www.creative-tim.com
                   @csrf
                         <div class="form-group">
                         <div class="mb-3">
-                        <label class="form-label">Kode Alternatif :</label>
-                              <input type="text" name="kd_alternatif" class="form-control " placeholder="Masukan Kode Alternatif">
+                        <label class="form-label">NIM :</label>
+                              <input type="text" name="nim" class="form-control " placeholder="Masukan NIM">
+                              @error('nim')
+                                    <div style="color: red;">{{ $message }}</div>
+                              @enderror
                         </div> 
                         </div>      
 
@@ -29,6 +32,9 @@ Coded by www.creative-tim.com
                         <div class="mb-3">
                         <label class="form-label">Nama Alternatif :</label>
                               <input type="text" name="nm_alternatif" class="form-control " placeholder="Masukan Nama Alternatif">
+                              @error('nm_alternatif')
+                                    <div style="color: red;">{{ $message }}</div>
+                              @enderror
                         </div>
                         </div> 
 

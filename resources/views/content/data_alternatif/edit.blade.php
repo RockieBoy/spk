@@ -21,8 +21,8 @@ Coded by www.creative-tim.com
                   @method('PUT')
                         <div class="form-group">
                         <div class="mb-3">
-                        <label class="form-label">Kode alternatif :</label>
-                              <input type="text" name="kd_alternatif" class="form-control" value="{{$alternatif->kd_alternatif}}" placeholder="Masukan Kode Alternatif">
+                        <label class="form-label">NIM :</label>
+                              <input type="text" name="nim" class="form-control" value="{{$alternatif->nim}}" placeholder="Masukan NIM">
                         </div>
                         </div>      
 

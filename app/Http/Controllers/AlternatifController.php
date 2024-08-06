@@ -24,12 +24,19 @@ class AlternatifController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kd_alternatif'=> 'required',
             'nm_alternatif'=> 'required',
+            'nim'=> 'required ||digits:11',
         ]);
+        
+        $nim = $request->input('nim');
+
+        $empatdigitakhir = substr($nim, -4);
+
+        $kodealternatif = 'TI-' . $empatdigitakhir;
 
         Alternatif::create([
-            'kd_alternatif'=> $request->kd_alternatif,
+            'nim'=>$request->nim,
+            'kd_alternatif'=> $kodealternatif,
             'nm_alternatif'=> $request->nm_alternatif,
         ]);
         return redirect()->route('alternatif.index') ->with('success','Alternatif Berhasil Dibuat.');
@@ -44,14 +51,22 @@ class AlternatifController extends Controller
     public function update(Request $request, Alternatif $alternatif)
     {
         $request->validate([
-            'kd_alternatif'=> 'required',
             'nm_alternatif'=> 'required',
+            'nim'=>'required ||digits:11',
 
         ]);
 
+        $nim = $request->input('nim');
+
+        $empatdigitakhir = substr($nim, -4);
+
+        $kodealternatif = 'TI-' . $empatdigitakhir;
+
+
         $alternatif->update([
-                'kd_alternatif' => $request->kd_alternatif,
-                'nm_alternatif' => $request->nm_alternatif,
+            'nim'=>$request->nim,
+            'kd_alternatif'=> $kodealternatif,
+            'nm_alternatif'=> $request->nm_alternatif,
             ]);
 
         return redirect()->route('alternatif.index')->with('success','alternatif berhasil diubah ');

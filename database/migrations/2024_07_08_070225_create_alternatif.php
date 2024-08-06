@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('nm_alternatif');
             $table->string('kd_alternatif');
+            $table->numeric('nim');
             $table->timestamps();
         });
     }

@@ -14,6 +14,7 @@ class Alternatif extends Model
 
     protected $fillable = [
         'kd_alternatif',
+        'nim',
         'nm_alternatif',
     ];
     public function penilaian()
