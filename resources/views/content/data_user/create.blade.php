@@ -43,7 +43,7 @@ Coded by www.creative-tim.com
 
                         <div class="form-group">
                         <div class="mb-3">
-                        <label class="form-label">Jenis :</label>
+                        <label class="form-label">Role :</label>
                               <select name="role" class="form-control">
                                     <option selected>~ Pilih Role ~</option>
                                     <option value="superadmin">SuperAdmin</option>

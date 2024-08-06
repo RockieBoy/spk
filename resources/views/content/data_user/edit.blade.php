@@ -37,13 +37,13 @@ Coded by www.creative-tim.com
                         <div class="form-group">
                         <div class="mb-3">
                         <label class="form-label">Password :</label>
-                              <input type="password" name="password" class="form-control" value="{{$adminusers->password}}" placeholder="Masukan Password">
+                              <input type="password" name="password" class="form-control" placeholder="Masukan Password">
                         </div>
                         </div>
 
                         <div class="form-group">
                         <div class="mb-3">
-                        <label class="form-label">role :</label>
+                        <label class="form-label">Role :</label>
                               <select name="role" class="form-control">
                                     <option value="superadmin" {{ $adminusers->role == 'superadmin' ? 'selected' : '' }}>SuperAdmin</option>
                                     <option value="kaprodi" {{ $adminusers->role == 'kaprodi' ? 'selected' : '' }}>KaProdi</option>
